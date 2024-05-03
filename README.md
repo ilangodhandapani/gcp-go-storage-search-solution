@@ -19,15 +19,16 @@ A storage and search solution in google cloud using bucket and firestore. Create
 4. Create bucket and Firestore collection, use same name in both places.
 
 5. Download this repo to your local and initialize go module
+   
   go mod init
   go mod tidy
 
-6. Export env variables present in exportlocalenv.sh and start the app locally. 
+7. Export env variables present in exportlocalenv.sh and start the app locally. 
   go run routes.go
 
-7. Check if app is up. "http://localhost:8080"
+8. Check if app is up. "http://localhost:8080"
 
-8. Use the below APIs in postman to create, read, search and delete functions.
+9. Use the below APIs in postman to create, read, search and delete functions.
 
 a. Create/Upload file along with metadata.
 
