@@ -31,9 +31,7 @@ A storage and search solution in google cloud using bucket and firestore. Create
 
 a. Create/Upload file along with metadata.
 
-    curl --location --request POST 'http://localhost:8080/<your-project-id>/<your-bucket-collection-name>/createobjectmetadata/1.pdf' \
---header 'metadata: {"FileName":"1.pdf","FileSize":"123456","Location":"GA","FilePath":"/","ObjectType":"Test"}' \
---form 'file=@"/**/**/1.pdf"'
+    curl --location --request POST 'http://localhost:8080/<your-project-id>/<your-bucket-collection-name>/createobjectmetadata/1.pdf' \--header 'metadata: {"FileName":"1.pdf","FileSize":"123456","Location":"GA","FilePath":"/","ObjectType":"Test"}' \--form 'file=@"/**/**/1.pdf"'
 
 b. Read metadata of a file.
 
