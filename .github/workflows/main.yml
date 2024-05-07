@@ -13,4 +13,4 @@ jobs:
           go-version: '1.21.x'
       - name: Install dependencies
         run: |
-          go get github.com/gin-gonic/gin
+          go install github.com/gin-gonic/gin
