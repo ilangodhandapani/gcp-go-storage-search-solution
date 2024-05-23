@@ -16,7 +16,7 @@ jobs:
            go mod init github.com/ilangodhandapani/go
            go mod tidy
            go get -u github.com/gin-gonic/gin
-           go run main.go
-      - name: Test application
-        run: |
-          curl "http://localhost/"
+      - name: Build
+        run: go build -v ./...
+      - name: Test with the Go CLI
+        run: go test
