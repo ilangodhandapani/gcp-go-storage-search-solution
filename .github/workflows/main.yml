@@ -16,7 +16,5 @@ jobs:
            go mod init github.com/ilangodhandapani/go
            go mod tidy
            go get -u github.com/gin-gonic/gin
-      - name: Build
-        run: go build .
-      - name: Test with the Go CLI
+      - name: Run the app
         run: go run routes.go
