@@ -13,6 +13,6 @@ jobs:
           go-version: '1.21.x'
       - name: Install dependencies
         run: |
-           go mod init https://github.com/ilangodhandapani/go
+           go mod init github.com/ilangodhandapani/go
            go mod tidy
            go get -u github.com/gin-gonic/gin
