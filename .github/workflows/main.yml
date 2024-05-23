@@ -17,6 +17,6 @@ jobs:
            go mod tidy
            go get -u github.com/gin-gonic/gin
       - name: Build
-        run: go build -v ./...
+        run: go build .
       - name: Test with the Go CLI
         run: go test
