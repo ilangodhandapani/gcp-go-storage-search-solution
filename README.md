@@ -5,7 +5,7 @@ A storage and search solution in google cloud using bucket and firestore. Create
 
 # Instructions
 
-1. Set up gcloud locally vy downloading google cli https://cloud.google.com/sdk/docs/install
+1. Set up gcloud locally by downloading google cli https://cloud.google.com/sdk/docs/install
 
 2. Initiate gcloud
 
