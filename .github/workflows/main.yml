@@ -22,6 +22,8 @@ jobs:
            export LCP="LOCAL"
            go build
            nohup ./APP-GO-GCP &
+      - name: Test the app
+        run: |
            curl "http://localhost:8080"
            
 
