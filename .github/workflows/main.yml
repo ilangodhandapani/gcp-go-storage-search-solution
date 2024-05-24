@@ -16,5 +16,7 @@ jobs:
            go mod init APP-GO-GCP
            go mod tidy
            go get -u github.com/gin-gonic/gin
+           export PORT=8080
+           export LCP="LOCAL"
       - name: Run the app
         run: go run routes.go
