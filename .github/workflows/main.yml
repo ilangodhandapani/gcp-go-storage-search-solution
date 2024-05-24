@@ -13,6 +13,6 @@ jobs:
           docker run -it --rm -d -p 8080:8080 --name web my-golang-app
       - name: Test container
         run: |
-          docker exec -it web sh curl "http://localhost:8080"
+          docker exec web curl "http://localhost:8080"
            
 
