@@ -4,26 +4,15 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-      - name: Setup Go
-        uses: actions/setup-go@v5
-        with:
-          go-version: '1.21.x'
-      - name: Install dependencies and run the application
+
+      - name: Build and run container
         run: |
-           go mod init APP-GO-GCP
-           go mod tidy
-           go get -u github.com/gin-gonic/gin
-      - name: Run the app
+          docker build -t my-golang-app .
+          docker run -it --rm -d -p 8080:8080 --name web my-golang-app
+      - name: Test container
         run: |
-           export PORT=8080
-           export LCP="LOCAL"
-           go build
-           nohup ./APP-GO-GCP &
-      - name: Test the app
-        run: |
-           curl -s "http://localhost:8080"
+          curl -s "http://localhost:8080"
            
 
