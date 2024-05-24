@@ -20,6 +20,6 @@ jobs:
         run: |
            export PORT=8080
            export LCP="LOCAL"
-           > nohup.out 2> nohup.err < /dev/null &
+           go run routes.go > nohup.out 2> nohup.err < /dev/null &
            ls -ltr
 
