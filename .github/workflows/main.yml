@@ -24,6 +24,6 @@ jobs:
            nohup ./APP-GO-GCP &
       - name: Test the app
         run: |
-           curl "http://localhost:8080"
+           curl -s "http://localhost:8080"
            
 
