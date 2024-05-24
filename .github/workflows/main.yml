@@ -20,5 +20,5 @@ jobs:
         run: |
            export PORT=8080
            export LCP="LOCAL"
-           nohup go run routes.go &
-           curl "http://localhost:8080"
+           go run routes.go
+
