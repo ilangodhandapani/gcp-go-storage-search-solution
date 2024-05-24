@@ -4,7 +4,6 @@ import (
 	controllers "APP-GO-GCP/controllers"
 	"net/http"
 	"os"
-	"fmt"
 	"github.com/gin-gonic/gin"
 )
 
@@ -23,7 +22,6 @@ func main() {
 	APP.GET("/:projectId/:collection/searchobjectbymetadata", controllers.SearchObjectByMetadataController)
 	APP.DELETE("/:projectId/:collection/deleteobject/*GCPobjectName", controllers.DeleteObjectByNameController)
 	if os.Getenv("LCP") == "LOCAL" {
-		fmt.Println("here")
 		APP.Run("localhost:8080")
 	} else {
 		port := os.Getenv("PORT")
