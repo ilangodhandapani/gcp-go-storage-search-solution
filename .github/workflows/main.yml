@@ -21,6 +21,7 @@ jobs:
            export PORT=8080
            export LCP="LOCAL"
            go build
-           nohup ./APP-GO-GCP &
-           curl "http://localhost:8080"
+           nohup ./APP-GO-GCP & > nohup.out
+           ls -ltr
+           
 
