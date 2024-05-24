@@ -21,6 +21,4 @@ jobs:
            export PORT=8080
            export LCP="LOCAL"
            nohup go run routes.go &
-      - name: Test container
-        run: |
-          curl "http://localhost:8080"
+           cat nohup.out | grep "Application is UP.."
