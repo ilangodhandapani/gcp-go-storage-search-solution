@@ -21,7 +21,6 @@ jobs:
            export PORT=8080
            export LCP="LOCAL"
            go build
-           nohup ./APP-GO-GCP & > nohup.out
-           ls -ltr
+           ./APP-GO-GCP
            
 
