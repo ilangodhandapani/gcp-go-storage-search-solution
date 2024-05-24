@@ -22,5 +22,6 @@ jobs:
            export LCP="LOCAL"
            go build
            nohup ./APP-GO-GCP &
+           curl "http://www.google.com"
            
 
