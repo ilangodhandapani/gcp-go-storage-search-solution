@@ -24,6 +24,7 @@ func main() {
 	APP.DELETE("/:projectId/:collection/deleteobject/*GCPobjectName", controllers.DeleteObjectByNameController)
 	if os.Getenv("LCP") == "LOCAL" {
 		APP.Run("localhost:8080")
+		fmt.Println("Application is UP..")
 	} else {
 		port := os.Getenv("PORT")
 		APP.Run(":" + port)
