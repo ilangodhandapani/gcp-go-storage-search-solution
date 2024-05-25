@@ -1,10 +1,5 @@
 # GO Repo base repo
 FROM golang:1.22.2 as builder
-#RUN apk add git
-# Add Maintainer Info
-LABEL maintainer="<>"
-#RUN apk add curl
-RUN apt-get -y update; apt-get -y install curl
 RUN mkdir /app
 ADD . /app
 WORKDIR /app
@@ -21,8 +16,6 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main .
 
 # GO Repo base repo
 FROM alpine:latest
-
-#RUN apk --no-cache add ca-certificates curl
 
 RUN mkdir /app
 
