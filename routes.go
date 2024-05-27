@@ -2,8 +2,12 @@ package main
 
 import (
 	controllers "APP-GO-GCP/controllers"
+	"context"
+	"log"
 	"net/http"
 	"os"
+
+	"cloud.google.com/go/logging"
 	"github.com/gin-gonic/gin"
 )
 
@@ -23,10 +27,31 @@ func main() {
 	APP.DELETE("/:projectId/:collection/deleteobject/*GCPobjectName", controllers.DeleteObjectByNameController)
 	if os.Getenv("LCP") == "LOCAL" {
 		APP.Run("localhost:8080")
+		structuredWrite("flawless-lacing-392113")
 	} else {
 		port := os.Getenv("PORT")
 		APP.Run(":" + port)
-
+		structuredWrite("flawless-lacing-392113")
 	}
 
+}
+
+func structuredWrite(projectID string) {
+	ctx := context.Background()
+	client, err := logging.NewClient(ctx, projectID)
+	if err != nil {
+		log.Fatalf("Failed to create logging client: %v", err)
+	}
+	defer client.Close()
+	const name = "log-example"
+	logger := client.Logger(name)
+	defer logger.Flush() // Ensure the entry is written.
+
+	logger.Log(logging.Entry{
+		// Log anything that can be marshaled to JSON.
+		Payload: struct{ Anything string }{
+			Anything: "The payload can be any type!",
+		},
+		Severity: logging.Debug,
+	})
 }

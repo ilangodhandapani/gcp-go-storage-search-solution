@@ -4,6 +4,7 @@ go 1.22.2
 
 require (
 	cloud.google.com/go/firestore v1.15.0
+	cloud.google.com/go/logging v1.10.0
 	cloud.google.com/go/storage v1.41.0
 	firebase.google.com/go v3.13.0+incompatible
 	github.com/gin-gonic/gin v1.10.0
@@ -61,7 +62,7 @@ require (
 	golang.org/x/time v0.5.0 // indirect
 	google.golang.org/appengine v1.6.8 // indirect
 	google.golang.org/genproto v0.0.0-20240401170217-c3f982113cda // indirect
-	google.golang.org/genproto/googleapis/api v0.0.0-20240506185236-b8a5c65736ae // indirect
+	google.golang.org/genproto/googleapis/api v0.0.0-20240513163218-0867130af1f8 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20240513163218-0867130af1f8 // indirect
 	google.golang.org/grpc v1.63.2 // indirect
 	google.golang.org/protobuf v1.34.1 // indirect
