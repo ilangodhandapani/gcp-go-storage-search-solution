@@ -26,10 +26,12 @@ func main() {
 	APP.GET("/:projectId/:collection/searchobjectbymetadata", controllers.SearchObjectByMetadataController)
 	APP.DELETE("/:projectId/:collection/deleteobject/*GCPobjectName", controllers.DeleteObjectByNameController)
 	if os.Getenv("LCP") == "LOCAL" {
+		structuredWrite("flawless-lacing-392113")
 		APP.Run("localhost:8080")
 		structuredWrite("flawless-lacing-392113")
 	} else {
 		port := os.Getenv("PORT")
+		structuredWrite("flawless-lacing-392113")
 		APP.Run(":" + port)
 		structuredWrite("flawless-lacing-392113")
 	}
@@ -52,6 +54,6 @@ func structuredWrite(projectID string) {
 		Payload: struct{ Anything string }{
 			Anything: "The payload can be any type!",
 		},
-		Severity: logging.Debug,
+		Severity: logging.Info,
 	})
 }
