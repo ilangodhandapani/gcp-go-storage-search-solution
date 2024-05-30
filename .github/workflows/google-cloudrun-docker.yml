@@ -94,8 +94,8 @@ jobs:
         id: deploy
         uses: google-github-actions/deploy-cloudrun@v2
         with:
-          service: ${{ secrets.SERVICE }}
-          region: ${{ secrets.REGION }}
+          service: my-app-go
+          region: us-east-1
 
           # NOTE: If using a pre-built image, update the image name here
           #image: ${{ secrets.GAR_LOCATION }}-docker.pkg.dev/${{ secrets.PROJECT_ID }}/${{ secrets.GAR_NAME }}/${{ secrets.SERVICE }}:latest
