@@ -84,9 +84,10 @@ jobs:
 
       - name: Build and Push Container
         run: |-
-          docker build -t "${{ secrets.GAR_LOCATION }}-docker.pkg.dev/${{ secrets.PROJECT_ID }}/${{ secrets.GAR_NAME }}/${{ secrets.SERVICE }}:latest" .
-          docker push "${{ secrets.GAR_LOCATION }}-docker.pkg.dev/${{ secrets.PROJECT_ID }}/${{ secrets.GAR_NAME }}/${{ secrets.SERVICE }}:latest"
-
+          #docker build -t "${{ secrets.GAR_LOCATION }}-docker.pkg.dev/${{ secrets.PROJECT_ID }}/${{ secrets.GAR_NAME }}/${{ secrets.SERVICE }}:latest" .
+          #docker push "${{ secrets.GAR_LOCATION }}-docker.pkg.dev/${{ secrets.PROJECT_ID }}/${{ secrets.GAR_NAME }}/${{ secrets.SERVICE }}:latest"
+          docker build -t us-east1-docker.pkg.dev/${{ secrets.PROJECT_ID }}/my-app-repo/my-go-app:latest .
+          docker push us-east1-docker.pkg.dev/${{ secrets.PROJECT_ID }}/my-app-repo/my-go-app:latest
       # END - Docker auth and build
 
       - name: Deploy to Cloud Run
