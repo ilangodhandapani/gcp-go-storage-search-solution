@@ -73,6 +73,7 @@ jobs:
         with:
           project_id: ${{ secrets.PROJECT_ID }}
           workload_identity_provider: '${{ secrets.WIF_PROVIDER }}' # e.g. - projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
       - name: To cloud run
         run: |
-          gcloud run deploy my-app-go --image us-east1-docker.pkg.dev/flawless-lacing-392113/my-app-repo/my-go-app:latest --region us-east1 --allow-unauthenticated
+          gcloud run deploy my-app-go --image us-east1-docker.pkg.dev/flawless-lacing-392113/my-app-repo/my-go-app:latest --region us-east1 --allow-unauthenticated --set-env-vars LCP=QA
