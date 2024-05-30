@@ -80,8 +80,8 @@ jobs:
       # Authenticate Docker to Google Cloud Artifact Registry
       - name: Docker Auth
         run : |-
-          gcloud auth configure-docker "${{ secrets.GAR_LOCATION }}-docker.pkg.dev"
-          #gcloud auth configure-docker us-east1-docker.pkg.dev
+          #gcloud auth configure-docker "${{ secrets.GAR_LOCATION }}-docker.pkg.dev"
+          gcloud auth configure-docker us-east1-docker.pkg.dev
       - name: Build and Push Container
         run: |-
           #docker build -t "${{ secrets.GAR_LOCATION }}-docker.pkg.dev/${{ secrets.PROJECT_ID }}/${{ secrets.GAR_NAME }}/${{ secrets.SERVICE }}:latest" .
