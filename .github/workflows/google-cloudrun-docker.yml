@@ -12,7 +12,7 @@
 #
 # 1. Ensure the required Google Cloud APIs are enabled:
 #
-#    Cloud Run            run.googleapis.com
+#    Cloud Run            run.googleapis.com 
 #    Artifact Registry    artifactregistry.googleapis.com
 #
 # 2. Create and configure Workload Identity Federation for GitHub (https://github.com/google-github-actions/auth#setting-up-workload-identity-federation)
