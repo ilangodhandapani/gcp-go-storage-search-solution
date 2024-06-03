@@ -78,7 +78,7 @@ jobs:
         with:
           service: ${{ secrets.SERVICE }}
           region: ${{ secrets.REGION }}
-          suffix: v3
+          suffix: v4
           # NOTE: If using a pre-built image, update the image name here
           image: ${{ secrets.GAR_LOCATION }}-docker.pkg.dev/${{ secrets.PROJECT_ID }}/${{ secrets.GAR_NAME }}/${{ secrets.SERVICE }}:latest
           env_vars: |-
@@ -88,10 +88,10 @@ jobs:
         run: |-
           #gcloud run services update ${{ secrets.SERVICE }} --ingress internal-and-cloud-load-balancing --allow-unauthenticated
           #gcloud run services update ${{ secrets.SERVICE }} --ingress internal-and-cloud-load-balancing --to-revisions ${{ secrets.SERVICE }}-suffix =50
-          #gcloud run services update ${{ secrets.SERVICE }} --ingress internal-and-cloud-load-balancing --region=${{ secrets.REGION }}
+          gcloud run services update ${{ secrets.SERVICE }} --ingress internal-and-cloud-load-balancing --region=${{ secrets.REGION }}
           #gcloud run services update ${{ secrets.SERVICE }} --revision-suffix ${{ secrets.SERVICE }}-v2=100 --region=${{ secrets.REGION }} 
           #gcloud run services update-traffic ${{ secrets.SERVICE }} --to-revisions ${{ secrets.SERVICE }}-v1=30,${{ secrets.SERVICE }}-v2=70 --region=${{ secrets.REGION }}
-          gcloud run services update-traffic ${{ secrets.SERVICE }} --to-revisions LATEST=100 --region=${{ secrets.REGION }}
+          gcloud run services update-traffic ${{ secrets.SERVICE }} --to-revisions LATEST=80 --region=${{ secrets.REGION }}
       # If required, use the Cloud Run url output in later steps
       - name: Show Output
         run: echo ${{ steps.deploy.outputs.url }}
