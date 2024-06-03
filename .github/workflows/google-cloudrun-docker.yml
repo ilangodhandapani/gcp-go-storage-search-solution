@@ -79,16 +79,17 @@ jobs:
         with:
           service: ${{ secrets.SERVICE }}
           region: ${{ secrets.REGION }}
+          suffix: v1
           # NOTE: If using a pre-built image, update the image name here
           image: ${{ secrets.GAR_LOCATION }}-docker.pkg.dev/${{ secrets.PROJECT_ID }}/${{ secrets.GAR_NAME }}/${{ secrets.SERVICE }}:latest
           env_vars: |-
             LCP=QA
-          tag: version2
-          tag_traffic: 'version2=50, version1=50'
+          #tag: version2
+          #tag_traffic: 'version2=50, version1=50'
       - name: Update ingress and authentication
         run: |-
           #gcloud run services update ${{ secrets.SERVICE }} --ingress internal-and-cloud-load-balancing --allow-unauthenticated
-          gcloud run services update ${{ secrets.SERVICE }} --ingress internal-and-cloud-load-balancing
+          gcloud run services update ${{ secrets.SERVICE }} --ingress internal-and-cloud-load-balancing --to-revisions ${{ secrets.SERVICE }}-${suffix} =100
       # If required, use the Cloud Run url output in later steps
       - name: Show Output
         run: echo ${{ steps.deploy.outputs.url }}
