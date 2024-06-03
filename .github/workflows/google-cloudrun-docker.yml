@@ -96,7 +96,9 @@ jobs:
             LCP=QA
           tag: version1
           #revision_traffic: 'version1=100'
-         
+      - name: Update ingress and authentication
+        run: |-
+          gcloud run services update ${{ secrets.SERVICE }} --ingress internal-and-cloud-load-balancing --allow-unauthenticated
       # If required, use the Cloud Run url output in later steps
       - name: Show Output
         run: echo ${{ steps.deploy.outputs.url }}
