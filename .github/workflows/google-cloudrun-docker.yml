@@ -80,7 +80,8 @@ jobs:
           #gcloud run services update ${{ secrets.SERVICE }} --ingress internal-and-cloud-load-balancing --to-revisions ${{ secrets.SERVICE }}-suffix =50
           #gcloud run services update ${{ secrets.SERVICE }} --ingress internal-and-cloud-load-balancing --region=${{ secrets.REGION }}
           #gcloud run services update ${{ secrets.SERVICE }} --revision-suffix ${{ secrets.SERVICE }}-v2=100 --region=${{ secrets.REGION }} 
-          gcloud run services update-traffic ${{ secrets.SERVICE }} --to-revisions ${{ secrets.SERVICE }}-v1=30,${{ secrets.SERVICE }}-v2=70 --region=${{ secrets.REGION }} 
+          #gcloud run services update-traffic ${{ secrets.SERVICE }} --to-revisions ${{ secrets.SERVICE }}-v1=30,${{ secrets.SERVICE }}-v2=70 --region=${{ secrets.REGION }}
+          gcloud run services update-traffic ${{ secrets.SERVICE }} --to-revisions LATEST=10 --region=${{ secrets.REGION }}
       # If required, use the Cloud Run url output in later steps
       - name: Show Output
         run: echo ${{ steps.deploy.outputs.url }}
