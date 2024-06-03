@@ -14,7 +14,7 @@ import (
 var APP *gin.Engine
 
 func getHomePageHandler(context *gin.Context) {
-	context.JSON(http.StatusOK, gin.H{"status": "appliation is up"})
+	context.JSON(http.StatusOK, gin.H{"status": "appliation is up v1.0"})
 }
 
 func main() {
@@ -27,7 +27,7 @@ func main() {
 	APP.DELETE("/:projectId/:collection/deleteobject/*GCPobjectName", controllers.DeleteObjectByNameController)
 	if os.Getenv("LCP") == "LOCAL" {
 		structuredWrite("flawless-lacing-392113")
-		APP.Run("localhost:8080")
+		APP.Run("localhost:8081")
 		structuredWrite("flawless-lacing-392113")
 	} else {
 		port := os.Getenv("PORT")
