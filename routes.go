@@ -14,12 +14,12 @@ import (
 var APP *gin.Engine
 
 func getHomePageHandler(context *gin.Context) {
-	context.JSON(http.StatusOK, gin.H{"status": "appliation is up v1.0"})
+	context.JSON(http.StatusOK, gin.H{"status": "appliation is up v3.0"})
 }
 
 func main() {
 	APP = gin.Default()
-	APP.GET("/", getHomePageHandler)
+	APP.GET("/status", getHomePageHandler)
 	APP.GET("/:projectId/:collection/readmetadata/:DocumentId", controllers.ReadMetadataByDocumentIdController)
 	APP.GET("/:projectId/:collection/readobjectbyname/*GCPobjectName", controllers.ReadObjectByNameController)
 	APP.POST("/:projectId/:collection/createobjectmetadata/*GCPobjectName", controllers.CreateObjectMetadataController)
