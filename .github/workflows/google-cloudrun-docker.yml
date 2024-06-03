@@ -78,7 +78,7 @@ jobs:
         run: |-
           #gcloud run services update ${{ secrets.SERVICE }} --ingress internal-and-cloud-load-balancing --allow-unauthenticated
           gcloud run services update ${{ secrets.SERVICE }} --ingress internal-and-cloud-load-balancing --to-revisions ${{ secrets.SERVICE }}-suffix =50
-          gcloud run services update ${{ secrets.SERVICE }} --ingress internal-and-cloud-load-balancing --to-revisions ${{ secrets.SERVICE }}-v2 =50
+          gcloud run services update ${{ secrets.SERVICE }} --ingress internal-and-cloud-load-balancing --to-revisions my-app-go-v2=50
       # If required, use the Cloud Run url output in later steps
       - name: Show Output
         run: echo ${{ steps.deploy.outputs.url }}
