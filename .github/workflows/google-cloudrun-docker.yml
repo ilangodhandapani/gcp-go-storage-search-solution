@@ -28,7 +28,7 @@
 #
 #    NOTE: You should always follow the principle of least privilege when assigning IAM roles
 #
-# 4. Create GitHub secrets for WIF_PROVIDER and WIF_SERVICE_ACCOUNT
+# 4. Create GitHub secrets for WIF_PROVIDER and WIF_SERVICE_ACCOUNT 
 #
 # 5. Change the values for the GAR_LOCATION, SERVICE and REGION secretsironment variables (below).
 #
