@@ -1,5 +1,13 @@
 ---
 apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: myapp-cm
+data:
+  LCP: "QA"
+  PORT: "8080"
+---
+apiVersion: v1
 kind: Service
 metadata:
   name: myapp
