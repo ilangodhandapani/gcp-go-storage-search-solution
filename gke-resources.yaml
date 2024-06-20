@@ -37,7 +37,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: us-east1-docker.pkg.dev/flawless-lacing-392113/my-app-repo/my-ecm-app:latest
+        image: us-central1-docker.pkg.dev/flawless-lacing-392113/my-app-repo/my-ecm-app:latest
         env:
         - name: LCP 
           valueFrom:
