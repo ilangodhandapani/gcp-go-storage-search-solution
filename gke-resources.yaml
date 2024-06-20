@@ -35,6 +35,7 @@ spec:
       labels:
         app: myapp
     spec:
+      serviceAccountName: stoarge-object-admin
       containers:
       - name: myapp
         image: us-central1-docker.pkg.dev/flawless-lacing-392113/my-app-repo/my-ecm-app:latest
