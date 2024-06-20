@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: myapp-cm
+  name: myapp
 data:
   LCP: "QA"
   PORT: "8080"
