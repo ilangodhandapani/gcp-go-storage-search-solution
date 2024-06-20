@@ -1,5 +1,5 @@
 steps:
-  Build app
+  #Build app
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'us-central1-docker.pkg.dev/flawless-lacing-392113/my-app-repo/my-ecm-app:latest', '.']
     id: BUILD
