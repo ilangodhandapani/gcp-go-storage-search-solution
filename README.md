@@ -1,4 +1,4 @@
-# Purpose 
+# Purpose  
 
 A storage and search solution in google cloud using bucket and firestore. Create, Read, Search and Delete files using the apis.
 
